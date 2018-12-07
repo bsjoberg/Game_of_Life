@@ -14,20 +14,4 @@ public class UniverseUnit {
 	@After
 	public void tearDown() throws Exception {
 	}
-
-	@Test
-	public void testDeadCellBecomesAliveWith3LiveNeighbors() {
-		Universe universe = new Universe();
-		
-//		// Add cells to the universe
-//		universe.addCell(new Cell(false), 0, 0);
-//		universe.addCell(new Cell(true), 1, 0);
-//		universe.addCell(new Cell(true), 0, 1);
-//		universe.addCell(new Cell(true), 1, 1);
-//		
-//		universe.tick();
-//		
-//		Assert.assertTrue(universe.getCellAt(0, 0).isAlive());
-	}
-
 }
