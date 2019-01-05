@@ -23,6 +23,10 @@ public class Cell {
 			else if (numberOfAliveNeighbors >= 4)
 				alive = false;
 		}
+		else if (this.alive == false) {
+			if (numberOfAliveNeighbors == 3)
+				alive = true;
+		}
 	}
 
 	public boolean isAlive() {
