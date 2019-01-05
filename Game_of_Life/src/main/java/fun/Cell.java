@@ -16,7 +16,7 @@ public class Cell {
 		// Create logic that determines whether the cell lives or dies
 		
 		// Handle Underpopulation
-		if (numberOfAliveNeighbors == 1)
+		if (numberOfAliveNeighbors == 1 || numberOfAliveNeighbors == 0)
 			alive = false;
 	}
 

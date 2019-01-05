@@ -27,7 +27,16 @@ public class CellUnit {
 
 	@Test
 	public void testCellDiesByUnderpopulationZeroAliveNeighbors() {
+		Cell cell = new Cell();
+		cell.setAlive(true);
+		cell.setNumberOfAliveNeighbors(0);
+		cell.tick();
 		
+		Assert.assertFalse(cell.isAlive());
 	}
 	
+	@Test
+	public void testCellDiesByOverpopulationFourAliveNeighbors() {
+		Cell cell = new Cell();
+	}
 }
