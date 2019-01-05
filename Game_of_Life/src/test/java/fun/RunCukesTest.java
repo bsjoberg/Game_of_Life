@@ -10,7 +10,7 @@ import cucumber.api.junit.Cucumber;
 @CucumberOptions(
 		plugin = { "pretty", "html:out" }, 
 		features = "src/test/resources", 
-		glue = {"hooks", "support" }, 
+		glue = {"fun"}, 
 		snippets = SnippetType.CAMELCASE)
 
 public class RunCukesTest {
