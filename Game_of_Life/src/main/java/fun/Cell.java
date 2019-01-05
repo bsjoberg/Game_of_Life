@@ -16,8 +16,13 @@ public class Cell {
 		// Create logic that determines whether the cell lives or dies
 		
 		// Handle Underpopulation
-		if (numberOfAliveNeighbors == 1 || numberOfAliveNeighbors == 0)
-			alive = false;
+		if (this.alive == true) {
+
+			if (numberOfAliveNeighbors == 1 || numberOfAliveNeighbors == 0)
+				alive = false;
+			else if (numberOfAliveNeighbors == 4)
+				alive = false;
+		}
 	}
 
 	public boolean isAlive() {

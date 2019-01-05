@@ -38,5 +38,10 @@ public class CellUnit {
 	@Test
 	public void testCellDiesByOverpopulationFourAliveNeighbors() {
 		Cell cell = new Cell();
+		cell.setAlive(true);
+		cell.setNumberOfAliveNeighbors(4);
+		cell.tick();
+		
+		Assert.assertFalse(cell.isAlive());
 	}
 }
