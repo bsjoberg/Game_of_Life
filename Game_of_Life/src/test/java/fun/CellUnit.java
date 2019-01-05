@@ -44,4 +44,14 @@ public class CellUnit {
 		
 		Assert.assertFalse(cell.isAlive());
 	}
+	
+	@Test
+	public void testCellDiesByOverpopulationFiveAliveNeighbors() {
+		Cell cell = new Cell();
+		cell.setAlive(true);
+		cell.setNumberOfAliveNeighbors(5);
+		cell.tick();
+		
+		Assert.assertFalse(cell.isAlive());
+	}
 }

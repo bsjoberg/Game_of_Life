@@ -20,7 +20,7 @@ public class Cell {
 
 			if (numberOfAliveNeighbors == 1 || numberOfAliveNeighbors == 0)
 				alive = false;
-			else if (numberOfAliveNeighbors == 4)
+			else if (numberOfAliveNeighbors >= 4)
 				alive = false;
 		}
 	}
