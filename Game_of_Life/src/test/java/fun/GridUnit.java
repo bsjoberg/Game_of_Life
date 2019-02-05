@@ -16,8 +16,16 @@ public class GridUnit {
 	}
 
 	@Test
-	public void testFindSurroundingCellsNumberAliveAt0_0()
-	{
+	public void testGridStringConstructor() {
+		// Create grid with alive and dead cells
+		Grid grid = new Grid("DDD,DAD,DDD");
+
+		Assert.assertEquals(3, grid.xSize);
+		Assert.assertEquals(3, grid.ySize);
+	}
+
+	@Test
+	public void testFindSurroundingCellsNumberAliveAt0_0() {
 		// Create grid with alive and dead cells
 		Grid grid = new Grid("DDD,DAD,DDD");
 
@@ -28,8 +36,7 @@ public class GridUnit {
 	}
 
 	@Test
-	public void testFindSurroundingCellsNumberAliveAt1_1()
-	{
+	public void testFindSurroundingCellsNumberAliveAt1_1() {
 		// Create grid with alive and dead cells
 		Grid grid = new Grid("DDD,DAD,DDD");
 
