@@ -38,8 +38,6 @@ public class GridSteps {
 	    // List<YourType>, List<List<E>>, List<Map<K,V>> or Map<K,V>.
 	    // E,K,V must be a scalar (String, Integer, Date, enum etc)
 
-		//Assert.assertTrue(table.raw().equals(board));
-		throw new PendingException();
+		Assert.assertTrue(table.raw().equals(board));
 	}
-
 }

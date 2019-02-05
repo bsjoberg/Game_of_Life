@@ -8,5 +8,14 @@ public class Grid {
 		this.xSize = xSize;
 		this.ySize = ySize;
 	}
+
+	public Grid(String string) {
+		// TODO Auto-generated constructor stub
+	}
+
+	public int numberSurroundingAliveAt(int i, int j) {
+		// TODO Auto-generated method stub
+		return 1;
+	}
 	
 }
