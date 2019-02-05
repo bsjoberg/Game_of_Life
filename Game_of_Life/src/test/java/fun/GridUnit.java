@@ -27,7 +27,7 @@ public class GridUnit {
 	@Test
 	public void testGridStringConstructorWithInconsistentLengths() {
 		try {
-			Grid grid = new Grid("DDD, DDDD, DDD");
+			new Grid("DDD, DDDD, DDD");
 		} catch (IllegalArgumentException iae) {
 			Assert.assertNotNull(iae);
 		}
