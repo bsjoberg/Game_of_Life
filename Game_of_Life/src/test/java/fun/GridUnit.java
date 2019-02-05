@@ -16,14 +16,26 @@ public class GridUnit {
 	}
 
 	@Test
-	public void testFindSurroudingCellsNumberAlive() {
+	public void testFindSurroundingCellsNumberAliveAt0_0()
+	{
 		// Create grid with alive and dead cells
 		Grid grid = new Grid("DDD,DAD,DDD");
-		
 
 		// Select a cell and find out each surrounding cells status
-		int numberAlive = grid.numberSurroundingAliveAt(0,0);
-		
-		Assert.assertEquals(1, numberAlive);		
+		int numberAlive = grid.numberSurroundingAliveAt(0, 0);
+
+		Assert.assertEquals(1, numberAlive);
+	}
+
+	@Test
+	public void testFindSurroundingCellsNumberAliveAt1_1()
+	{
+		// Create grid with alive and dead cells
+		Grid grid = new Grid("DDD,DAD,DDD");
+
+		// Select a cell and find out each surrounding cells status
+		int numberAlive = grid.numberSurroundingAliveAt(1, 1);
+
+		Assert.assertEquals(0, numberAlive);
 	}
 }
