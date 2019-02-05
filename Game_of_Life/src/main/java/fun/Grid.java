@@ -14,7 +14,6 @@ public class Grid {
 	}
 
 	public int numberSurroundingAliveAt(int i, int j) {
-		// TODO Auto-generated method stub
 		return 1;
 	}
 	
