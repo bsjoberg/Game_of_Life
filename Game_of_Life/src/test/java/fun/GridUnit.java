@@ -25,6 +25,15 @@ public class GridUnit {
 	}
 
 	@Test
+	public void testGridStringConstructorWithInconsistentLengths() {
+		try {
+			Grid grid = new Grid("DDD, DDDD, DDD");
+		} catch (IllegalArgumentException iae) {
+			Assert.assertNotNull(iae);
+		}
+	}
+	
+	@Test
 	public void testFindSurroundingCellsNumberAliveAt0_0() {
 		// Create grid with alive and dead cells
 		Grid grid = new Grid("DDD,DAD,DDD");
