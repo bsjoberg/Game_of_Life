@@ -79,8 +79,24 @@ public class Grid {
 		return ySize;
 	}
 	
-	public int numberSurroundingAliveAt(int i, int j) {
-		return 1;
+	public int numberSurroundingAliveAt(int x, int y) {
+		int aliveCount = 0;
+		
+		// Loop throw all cells that are one off from the passed in position
+		for (int xPos = x - 1; xPos <= (x + 1); xPos++) {
+			for (int yPos = y - 1; yPos <= (y + 1); yPos++) {
+				// Don't go out of bounds
+				if (xPos >= 0 && yPos >= 0) {
+					// Don't check the cell position
+					if (xPos != x || yPos != y) {
+						if (grid.get(xPos).get(yPos).isAlive())
+							aliveCount++;
+					}
+				}
+			}
+		}
+		
+		return aliveCount;
 	}
 
 	public Cell cellAt(int x, int y) {
