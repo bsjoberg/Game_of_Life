@@ -50,6 +50,14 @@ public class GridUnit {
 	}
 	
 	@Test
+	public void testGetCellStatusAt2_1() {
+		// Create grid with alive and dead cells
+		Grid grid = new Grid("DDD,DAD,DAD");
+		
+		Assert.assertTrue(grid.cellAt(2,1).isAlive());
+	}
+	
+	@Test
 	public void testFindSurroundingCellsNumberAliveAt0_0() {
 		// Create grid with alive and dead cells
 		Grid grid = new Grid("DDD,DAD,DDD");
