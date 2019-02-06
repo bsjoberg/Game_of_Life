@@ -34,6 +34,14 @@ public class Grid {
 		if (!areRowsSameLength) {
 			throw new IllegalArgumentException("String array is not an unequal row length.");
 		}
+		else {
+			populateGrid(rowTokens);
+		}
+	}
+
+	private void populateGrid(String[] rowTokens) {
+		// TODO Auto-generated method stub
+		
 	}
 
 	public int getXSize() {
@@ -46,6 +54,10 @@ public class Grid {
 	
 	public int numberSurroundingAliveAt(int i, int j) {
 		return 1;
+	}
+
+	public Cell cellAt(int i, int j) {
+		return new Cell();
 	}
 	
 }

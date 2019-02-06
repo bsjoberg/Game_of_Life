@@ -32,6 +32,22 @@ public class GridUnit {
 			Assert.assertNotNull(iae);
 		}
 	}
+
+	@Test
+	public void testGetCellStatusAt0_0() {
+		// Create grid with alive and dead cells
+		Grid grid = new Grid("DDD,DAD,DDD");
+		
+		Assert.assertFalse(grid.cellAt(0,0).isAlive());
+	}
+
+	@Test
+	public void testGetCellStatusAt1_1() {
+		// Create grid with alive and dead cells
+		Grid grid = new Grid("DDD,DAD,DDD");
+		
+		Assert.assertTrue(grid.cellAt(0,0).isAlive());
+	}
 	
 	@Test
 	public void testFindSurroundingCellsNumberAliveAt0_0() {
