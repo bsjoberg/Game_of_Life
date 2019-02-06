@@ -46,7 +46,7 @@ public class GridUnit {
 		// Create grid with alive and dead cells
 		Grid grid = new Grid("DDD,DAD,DDD");
 		
-		Assert.assertTrue(grid.cellAt(0,0).isAlive());
+		Assert.assertTrue(grid.cellAt(1,1).isAlive());
 	}
 	
 	@Test

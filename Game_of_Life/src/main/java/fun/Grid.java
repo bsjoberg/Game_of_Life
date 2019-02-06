@@ -1,6 +1,11 @@
 package fun;
 
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
+
 public class Grid {
+	List<List<Cell>> grid;
 	int xSize = 0;
 	int ySize = 0;
 	
@@ -39,9 +44,30 @@ public class Grid {
 		}
 	}
 
-	private void populateGrid(String[] rowTokens) {
-		// TODO Auto-generated method stub
+	private void populateGrid(String[] rowTokens) throws IllegalArgumentException {
+		grid = new ArrayList<List<Cell>>();
+		ArrayList<Cell> yList = new ArrayList<Cell>();
+		grid.addAll((Collection<? extends List<Cell>>) yList);
 		
+		// Loop throw and populate grid
+		for (int y = 0; y < ySize; y++) {
+			String row = rowTokens[y];
+			
+			for (int x = 0; x < xSize; x++) {
+				char cellState = row.charAt(x);
+				Cell cell = new Cell();
+				if (cellState == 'A') {
+					cell.setAlive(true);
+				} else if (cellState == 'D') {
+					cell.setAlive(false);
+				} else {
+					throw new IllegalArgumentException("Wasn't an A or D");
+				}
+				
+				// Add cell to grid
+				grid.get(y).add(x, cell);
+			}
+		}
 	}
 
 	public int getXSize() {
