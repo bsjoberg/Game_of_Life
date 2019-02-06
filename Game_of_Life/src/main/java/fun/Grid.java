@@ -47,7 +47,12 @@ public class Grid {
 	private void populateGrid(String[] rowTokens) throws IllegalArgumentException {
 		grid = new ArrayList<List<Cell>>();
 		ArrayList<Cell> yList = new ArrayList<Cell>();
-		grid.addAll((Collection<? extends List<Cell>>) yList);
+		yList.add(new Cell());
+		yList.add(new Cell());
+		yList.add(new Cell());
+		grid.add(yList);
+		grid.add(yList);
+		grid.add(yList);
 		
 		// Loop throw and populate grid
 		for (int y = 0; y < ySize; y++) {
