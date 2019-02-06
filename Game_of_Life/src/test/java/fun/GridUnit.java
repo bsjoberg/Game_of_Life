@@ -78,4 +78,15 @@ public class GridUnit {
 
 		Assert.assertEquals(0, numberAlive);
 	}
+	
+	@Test
+	public void testFindSurroundingCellsNumberAliveAt0_1() {
+		// Create grid with alive and dead cells
+		Grid grid = new Grid("AAA,DAD,DDD");
+
+		// Select a cell and find out each surrounding cells status
+		int numberAlive = grid.numberSurroundingAliveAt(0, 1);
+
+		Assert.assertEquals(3, numberAlive);
+	}
 }
