@@ -101,5 +101,10 @@ public class Grid {
 	public Cell cellAt(int x, int y) {
 		return grid.get(x).get(y);
 	}
+
+	public void tick() {
+		// New state of grid
+		List<List<Cell>> newGrid = new ArrayList<List<Cell>>();
+	}
 	
 }

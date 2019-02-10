@@ -89,4 +89,15 @@ public class GridUnit {
 
 		Assert.assertEquals(3, numberAlive);
 	}
+	
+	@Test
+	public void testCellAt0_0ComesAliveAfterTick() {
+		// Create grid where two neighbors are alive and cell is alive
+		Grid grid = new Grid("DAD,AAD,DDD");
+		
+		// Tick the grid
+		grid.tick();
+		
+		Assert.assertTrue(grid.cellAt(0, 0).isAlive());
+	}
 }
