@@ -50,11 +50,11 @@ public class GridUnit {
 	}
 	
 	@Test
-	public void testGetCellStatusAt2_1() {
+	public void testGetCellStatusAt1_2() {
 		// Create grid with alive and dead cells
 		Grid grid = new Grid("DDD,DAD,DAD");
 		
-		Assert.assertTrue(grid.cellAt(2,1).isAlive());
+		Assert.assertTrue(grid.cellAt(1,2).isAlive());
 	}
 	
 	@Test
@@ -94,7 +94,9 @@ public class GridUnit {
 	public void testCreateGridWithDifferentXAndYSize () {
 		Grid grid = new Grid("DDDD,AAAA,AAAD,AAAA,AAAD");
 		
-		Assert.assertFalse(grid.cellAt(4, 3).isAlive());
+		Assert.assertFalse(grid.cellAt(3, 4).isAlive());
+		Assert.assertTrue(grid.cellAt(3, 3).isAlive());
+		Assert.assertFalse(grid.cellAt(3, 0).isAlive());
 	}
 	
 	@Test

@@ -80,8 +80,8 @@ public class Grid {
 		int aliveCount = 0;
 		
 		// Loop throw all cells that are one off from the passed in position
-		for (int xPos = x - 1; xPos <= (x + 1); xPos++) {
-			for (int yPos = y - 1; yPos <= (y + 1); yPos++) {
+		for (int yPos = y - 1; yPos <= (y + 1); yPos++) {
+			for (int xPos = x - 1; xPos <= (x + 1); xPos++) {
 				// Don't go out of bounds
 				if (xPos >= 0 && yPos >= 0) {
 					// Don't check the cell position
@@ -97,7 +97,7 @@ public class Grid {
 	}
 
 	public Cell cellAt(int x, int y) {
-		return grid.get(x).get(y);
+		return grid.get(y).get(x);
 	}
 
 	public void tick() {
