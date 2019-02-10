@@ -91,6 +91,13 @@ public class GridUnit {
 	}
 	
 	@Test
+	public void testCreateGridWithDifferentXAndYSize () {
+		Grid grid = new Grid("DDDD,AAAA,AAAD,AAAA,AAAD");
+		
+		Assert.assertFalse(grid.cellAt(4, 3).isAlive());
+	}
+	
+	@Test
 	public void testCellAt0_0ComesAliveAfterTick() {
 		// Create grid where two neighbors are alive and cell is alive
 		Grid grid = new Grid("DAD,AAD,DDD");
