@@ -83,7 +83,7 @@ public class Grid {
 		for (int yPos = y - 1; yPos <= (y + 1); yPos++) {
 			for (int xPos = x - 1; xPos <= (x + 1); xPos++) {
 				// Don't go out of bounds
-				if (xPos >= 0 && yPos >= 0) {
+				if (xPos >= 0 && xPos < xSize && yPos >= 0 && yPos < ySize) {
 					// Don't check the cell position
 					if (xPos != x || yPos != y) {
 						if (grid.get(xPos).get(yPos).isAlive())
@@ -102,7 +102,28 @@ public class Grid {
 
 	public void tick() {
 		// New state of grid
-		List<List<Cell>> newGrid = new ArrayList<List<Cell>>();
+		List<List<Cell>> newGrid = new ArrayList<List<Cell>>(grid);
+		
+		// Loop through each cell and find out if they stay alive or die
+		for (int y = 0; y < ySize; y++) {		
+			for (int x = 0; x < xSize; x++) {
+				int numberOfAliveNeighbors = numberSurroundingAliveAt(x, y);
+				
+				// Handle Underpopulation
+				if (cellAt(x,y).isAlive()) {
+					if (numberOfAliveNeighbors == 1 || numberOfAliveNeighbors == 0)
+						newGrid.get(x).get(y).setAlive(false);
+					else if (numberOfAliveNeighbors >= 4)
+						newGrid.get(x).get(y).setAlive(false);
+				}
+				else if (!cellAt(x,y).isAlive()) {
+					if (numberOfAliveNeighbors == 3)
+						newGrid.get(x).get(y).setAlive(true);
+				}
+			}
+		}
+		
+		grid = new ArrayList<List<Cell>>(newGrid);
 	}
 	
 }
