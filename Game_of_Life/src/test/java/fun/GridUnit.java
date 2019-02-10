@@ -80,6 +80,17 @@ public class GridUnit {
 	}
 	
 	@Test
+	public void testFindSurroundingCellsNumberAliveAtOuterEdge() {
+		// Create grid with alive and dead cells
+		Grid grid = new Grid("DDD,DAD,DDD");
+
+		// Select a cell and find out each surrounding cells status
+		int numberAlive = grid.numberSurroundingAliveAt(2,1);
+
+		Assert.assertEquals(1, numberAlive);
+	}
+	
+	@Test
 	public void testFindSurroundingCellsNumberAliveAt0_1() {
 		// Create grid with alive and dead cells
 		Grid grid = new Grid("AAA,DAD,DDD");
