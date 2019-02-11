@@ -120,4 +120,15 @@ public class GridUnit {
 		
 		Assert.assertTrue(grid.cellAt(0, 0).isAlive());
 	}
+	
+	@Test
+	public void testAliveCellDiesWhenFewerThanTwoNeighborsAlive() {
+		Grid grid = new Grid("DDD,DAD,DAD");
+		
+		Assert.assertTrue(grid.cellAt(1, 1).isAlive());
+		
+		grid.tick();
+		
+		Assert.assertFalse(grid.cellAt(1, 1).isAlive());
+	}
 }
